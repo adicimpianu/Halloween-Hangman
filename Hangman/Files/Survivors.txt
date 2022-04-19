@@ -1,0 +1,5 @@
+Adi ../Images/ProfilePictures/Freddy.png 8 3
+Gica ../Images/ProfilePictures/Myers.jpg 0 0
+fabi ../Images/ProfilePictures/Pinhead.jpg 2 0
+da ../Images/ProfilePictures/Freddy.png 0 0
+Claudiu ../Images/ProfilePictures/Jason.jpg 4 1

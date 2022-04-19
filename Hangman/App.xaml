@@ -1,0 +1,36 @@
+﻿<Application x:Class="Hangman.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Hangman"
+             xmlns:viewModel="clr-namespace:Hangman.ViewModels"
+             xmlns:view ="clr-namespace:Hangman.Views"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/ListboxItemTheme.xaml"/>
+                <ResourceDictionary Source="Themes/ListboxTheme.xaml"/>
+                <ResourceDictionary Source="Themes/GameButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/LoadGameButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/KeyboardButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/CategoryButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/StartGameButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/SaveGameButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:FirstpageView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
+                <view:GamepageView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:HangmanViewModel}">
+                <view:HangmanView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>

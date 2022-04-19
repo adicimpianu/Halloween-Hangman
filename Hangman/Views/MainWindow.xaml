@@ -1,0 +1,55 @@
+﻿<Window x:Class="Hangman.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hangman"
+        xmlns:ctx ="clr-namespace:Hangman.ViewModels"
+        xmlns:controls="clr-namespace:Hangman.Views"
+        mc:Ignorable="d"
+        Title="Halloween Hangman" 
+        Height="720" 
+        Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="Black"
+        WindowStyle="None"
+        WindowState="Maximized">
+    <Window.DataContext>
+        <ctx:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        Executed="CloseCommandHandler"/>
+    </Window.CommandBindings>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+      
+        <ContentControl Content="{Binding CurrentView}"
+                        Grid.ColumnSpan="2"/>
+        <Button Grid.Column="2"
+                Height="50"
+                Width ="50"
+                HorizontalAlignment ="Right"
+                VerticalAlignment="Top"
+                Command="ApplicationCommands.Close"
+                BorderThickness="0"
+                >
+            <Button.Background>
+                <ImageBrush ImageSource="../Images/NoImage.png"/>
+            </Button.Background>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+    
+</Window>

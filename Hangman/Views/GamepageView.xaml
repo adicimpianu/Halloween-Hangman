@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Hangman.Views.GamepageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hangman.Views"
+             xmlns:ctx="clr-namespace:Hangman.ViewModels"
+             mc:Ignorable="d" 
+             Background="Black"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </UserControl.Resources>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="700"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" 
+              Grid.Column="0" 
+              Grid.RowSpan="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+
+            <Rectangle 
+                   Height="500" 
+                   Width="500"
+                   Grid.Row="0"
+                   Grid.RowSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Margin="138,50,162,200">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding SurvivorPicturePath}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <TextBlock Text="{Binding SurvivorUsername}"
+                   Foreground="White"
+                   FontSize="22"
+                   Grid.Column="0"
+                   Height="200"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   FontFamily ="/Fonts/#Destroy"/>
+
+        </Grid>
+        <StackPanel
+            Orientation="Vertical"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+            <StackPanel
+                Orientation="Horizontal">
+                <TextBlock Text=" GAMES PLAYED:"
+                   FontSize="24"
+                   FontFamily ="/Fonts/#Destroy"
+                   Foreground="White"
+                   Width="300"
+                   />
+                <TextBlock Text="{Binding GamesPlayed}"
+                   FontSize="24"
+                   FontFamily ="/Fonts/#Destroy"
+                   Foreground="White"
+                   Width="100"
+                   />
+            </StackPanel>
+            
+            <StackPanel
+                Orientation="Horizontal">
+                <TextBlock Text=" GAMES WON:"
+                   FontSize="24"
+                   FontFamily ="/Fonts/#Destroy"
+                   Foreground="White"
+                   Width="240"
+                   />
+                <TextBlock Text="{Binding GamesWon}"
+                   FontSize="24"
+                   FontFamily ="/Fonts/#Destroy"
+                   Foreground="White"
+                   Width="100"
+                   />
+            </StackPanel>
+            
+        </StackPanel>
+        
+        
+        <Button Grid.Column="1"
+                Grid.Row="1"
+                Height="100"
+                Width="400"
+                HorizontalAlignment="Right"
+                BorderThickness="0"
+                Style="{StaticResource newGame}"
+                Command="{Binding NewGamePressedCommand}"
+                />
+
+        <Button Grid.Column="1"
+                Grid.Row="2"
+                Height="100"
+                Width="400"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                BorderThickness="0"
+                Style="{StaticResource loadGame}"
+                Command="{Binding LoadGamePressedCommand}"
+                />
+    </Grid>
+</UserControl>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGameModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameModel>
+    <Username>Claudiu</Username>
+    <Category>EHorrorMovies</Category>
+    <Timer>27</Timer>
+    <MistakeStage>2</MistakeStage>
+    <CurrentLevel>1</CurrentLevel>
+    <CurrentWord>The Witch</CurrentWord>
+    <ShownWord>
+      <string> HE</string>
+      <string>   CH</string>
+    </ShownWord>
+  </GameModel>
+  <GameModel>
+    <Username>fabi</Username>
+    <Category>EHorrorMovies</Category>
+    <Timer>27</Timer>
+    <MistakeStage>0</MistakeStage>
+    <CurrentLevel>1</CurrentLevel>
+    <CurrentWord>A Quiet Place</CurrentWord>
+    <ShownWord>
+      <string>A</string>
+      <string>  I  </string>
+      <string>  A  </string>
+    </ShownWord>
+  </GameModel>
+  <GameModel>
+    <Username>Adi</Username>
+    <Category>EHorrorMovies</Category>
+    <Timer>26</Timer>
+    <MistakeStage>1</MistakeStage>
+    <CurrentLevel>3</CurrentLevel>
+    <CurrentWord>Alien</CurrentWord>
+    <ShownWord>
+      <string> L   </string>
+    </ShownWord>
+  </GameModel>
+</ArrayOfGameModel>

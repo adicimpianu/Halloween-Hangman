@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFCAE0CD-BE3B-42F3-82D6-F5F063F28E1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hangman</RootNamespace>
+    <AssemblyName>Hangman</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Themes\CategoryButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GameButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\KeyboardButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ListboxItemTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ListboxTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\LoadGameButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SaveGameButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\StartGameButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FirstpageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GamepageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HangmanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Models\CategoriesModel.cs" />
+    <Compile Include="Models\FileModel.cs" />
+    <Compile Include="Models\GameModel.cs" />
+    <Compile Include="Models\Players.cs" />
+    <Compile Include="Models\Timer.cs" />
+    <Compile Include="ViewModels\BaseVM.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
+    <Compile Include="ViewModels\HangmanViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\FirstpageView.xaml.cs">
+      <DependentUpon>FirstpageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GamepageView.xaml.cs">
+      <DependentUpon>GamepageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HangmanView.xaml.cs">
+      <DependentUpon>HangmanView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Destroy.TTF" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ListboxItemPhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddNewImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeleteImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PlayImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ProfilePictures\Freddy.png" />
+    <Resource Include="Images\ProfilePictures\Ghostface.jpg" />
+    <Resource Include="Images\ProfilePictures\IT.jpg" />
+    <Resource Include="Images\ProfilePictures\Myers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rightArrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\leftArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\Survivors.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddSurvivorImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CloseImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoginLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ProfilePictures\Jason.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ProfilePictures\Pinhead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ProfilePictures\Bughuul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NoImage.png" />
+    <Resource Include="Images\YesImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\newGameImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loadGameImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\noLoadGameImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\newGameHoverImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loadGameHoverImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\keyboardButtonImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\keyboardButtonUnhoveredImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\categoryButtonImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\saveGame.png" />
+    <Resource Include="Images\saveGameHover.png" />
+    <Resource Include="Images\startGame.png" />
+    <Resource Include="Images\startGameHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Levels\fifthStage.jpg" />
+    <Resource Include="Images\Levels\firstStage.jpg" />
+    <Resource Include="Images\Levels\fourthStage.jpg" />
+    <Resource Include="Images\Levels\secondStage.jpg" />
+    <Resource Include="Images\Levels\thirdStage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Levels\startingStage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Levels\fifthLevel.jpg" />
+    <Resource Include="Images\Levels\firstLevel.jpg" />
+    <Resource Include="Images\Levels\fourthLevel.jpg" />
+    <Resource Include="Images\Levels\secondLevel.jpg" />
+    <Resource Include="Images\Levels\thirdLevel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Levels\startingLevel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\games.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Levels\lvlFive.jpg" />
+    <Resource Include="Images\Levels\lvlFour.jpg" />
+    <Resource Include="Images\Levels\lvlOne.jpg" />
+    <Resource Include="Images\Levels\lvlThree.jpg" />
+    <Resource Include="Images\Levels\lvlTwo.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
